@@ -1,0 +1,90 @@
+.quote{
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 200px;
+    background-color: black;
+
+    .profile{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 100px;
+        gap: 32px;
+
+        .text-primary{
+            font-weight: bolder;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .text-secondary{
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        .text-three{
+            font-size: 16px;
+            line-height: 32px;
+        }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            .text{
+                gap: 10px;
+                display: flex;
+            }
+            img{
+                border-radius: 10px;
+            }
+            .updated-at{
+                text-align: right;
+                .text-primary{
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .infos-price{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .overview{
+            width: 100%;
+            h2{
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: bolder;
+            }
+            .container{
+                max-width: 1100px;
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 500px;
+                    padding: 10px;
+                    border: 0.5px solid rgba(255, 255, 255, 0.404);
+                    border-radius: 5px;
+
+                    .price{
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }
+
+                .detach{
+                    width: 1035px;
+                }
+            }
+        }
+    }
+}
