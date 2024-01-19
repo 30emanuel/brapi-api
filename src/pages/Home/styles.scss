@@ -37,13 +37,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         width: 100%;
         margin-top: 50px;
-        gap: 20px;
 
         a{
             text-decoration: none;
+        }
+
+        .list-container{
+            padding-bottom: 200px;
+            max-width: 1100px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .card{

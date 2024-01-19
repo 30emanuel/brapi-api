@@ -34,19 +34,21 @@ export const Home = () => {
                 <button onClick={search}>Pesquisar</button>
             </div>
             <div className='list'>
-                {list.map((stock) =>(
-                    <Link to={`/quote/${stock.stock}`}>
-                        <div className="card">
-                            <img src={stock.logo} alt="" />
-                            <div className="text">
-                                <h2>{stock.stock}</h2>
-                                <p>{stock.name}</p>
-                                <p>{stock.close.toLocaleString('pt-BR', { style: 'currency', currency: `BRL` })}</p>
-                                <p>{stock.changeSymbolPercent} {stock.change.toFixed(2)}%</p>
+                <div className="list-container">
+                    {list.map((stock) =>(
+                        <Link to={`/quote/${stock.stock}`}>
+                            <div className="card">
+                                <img src={stock.logo} alt="" />
+                                <div className="text">
+                                    <h2>{stock.stock}</h2>
+                                    <p>{stock.name}</p>
+                                    <p>{stock.close.toLocaleString('pt-BR', { style: 'currency', currency: `BRL` })}</p>
+                                    <p>{stock.changeSymbolPercent} {stock.change.toFixed(2)}%</p>
+                                </div>
                             </div>
-                        </div>
-                    </Link>
-                ))}
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     )
