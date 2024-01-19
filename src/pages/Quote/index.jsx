@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react'
 import './styles.scss'
 import axios from 'axios'
 import { Ia } from '../Components/Ia'
+import { useParams, Link } from 'react-router-dom'
 
 export const Quote = () => {
     const url = 'https://brapi.dev/api/quote'
     const [infos, setInfos] = useState(null)
     const [symbolPercent, setSymbolPercent] = useState('=')
     const [updatedAt, setUpdatedAt] = useState('')
+    const params = useParams()
 
     const key = process.env.REACT_APP_BRAPIAPI_KEY
 
     const search = async () => {
-        const res = await axios.get(`${url}/LREN3?modules=summaryProfile&token=${key}`)
+        const res = await axios.get(`${url}/${params.search}?modules=summaryProfile&token=${key}`)
 
         setInfos(res.data.results[0])
         console.log(res.data.results[0])
@@ -23,8 +25,8 @@ export const Quote = () => {
             setSymbolPercent('▼')
         }
 
-        const updatedAt = new Date(res.data.results[0].updatedAt);
-        const formattedDate = updatedAt.toLocaleString();
+        const updatedAt = new Date(res.data.results[0].updatedAt)
+        const formattedDate = updatedAt.toLocaleString()
         setUpdatedAt(formattedDate)
     }
 
@@ -34,6 +36,11 @@ export const Quote = () => {
 
     return (
         <div className='quote'>
+            <div className="button-container">
+                <Link to={`/`}>
+                    <button>Voltar</button>
+                </Link>
+            </div>
             {infos !== null ? (
                 <>
                     <div className='profile'>

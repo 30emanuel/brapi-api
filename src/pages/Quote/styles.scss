@@ -4,13 +4,33 @@
     padding-bottom: 200px;
     background-color: black;
 
+    .button-container{
+        padding-top: 20px;
+        padding-left: 100px;
+
+        button{
+            width: 100px;
+            font-weight: bolder;
+            height: 50px;
+            border-radius: 20px;
+            border: 1px solid black;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover{
+                color: rgb(238, 239, 232);
+                background-color: black;
+                border: 1px solid white;
+            }
+        }
+    }
+
     .profile{
         display: flex;
         flex-direction: column;
         color: white;
         padding-left: 100px;
         padding-right: 100px;
-        padding-top: 100px;
+        padding-top: 50px;
         gap: 32px;
 
         .text-primary{
